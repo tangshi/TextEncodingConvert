@@ -13,10 +13,12 @@ class ViewController: NSViewController {
 
     @IBOutlet weak var convertView: ConvertView!
   
+    @IBOutlet var convertResultView: NSTextView!
+  
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Do any additional setup after loading the view.
+        convertView.controller = self
     }
     
     override var representedObject: AnyObject? {

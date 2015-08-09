@@ -19,6 +19,10 @@ class ConvertView: NSView {
     
     let gbk_encoding = CFStringConvertEncodingToNSStringEncoding(CFStringEncoding(CFStringEncodings.GB_18030_2000.rawValue))
     
+    var controller: ViewController?
+    
+    var convertResult = ""
+    
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         registerForDraggedTypes([NSFilenamesPboardType])
@@ -44,8 +48,22 @@ class ConvertView: NSView {
         let pBoard = sender.draggingPasteboard()
         
         if let arr = pBoard.propertyListForType(NSFilenamesPboardType) as? NSArray {
+            
+            convertResult = ""
+            
             let converted_size = convertAll(arr as! [String])
-            Swift.print("converted file size: \(converted_size)", appendNewline: true)
+            
+            var resultHead = ""
+            if sourceEncoding == .GBK {
+                resultHead = "原编码: GBK -> 目标编码: UTF-8"
+            }
+            else {
+                resultHead = "原编码: UTF-8 -> 目标编码: GBK"
+            }
+            resultHead = "\(resultHead) \n \n 本次共转换\(converted_size)个文件 : \n\n"
+
+            controller?.convertResultView.string = resultHead + convertResult
+            
             return true
         }
         else {
@@ -77,6 +95,7 @@ class ConvertView: NSView {
             }
             else {
                 if convertEncoding(path) == true {
+                    convertResult = convertResult + "  \(path)\n"
                     size++
                 }
             }
