@@ -22,7 +22,6 @@
 		09B0D00B1B75E88D0058BAEA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		09B0D00E1B75E88D0058BAEA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		09B0D0101B75E88D0058BAEA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		09B0D0161B75E9590058BAEA /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,7 +55,6 @@
 			isa = PBXGroup;
 			children = (
 				09B0D0071B75E88D0058BAEA /* AppDelegate.swift */,
-				09B0D0161B75E9590058BAEA /* MyPlayground.playground */,
 				09B0D0091B75E88D0058BAEA /* ViewController.swift */,
 				0952CB611B765B82003CF20B /* ConvertView.swift */,
 				09B0D00B1B75E88D0058BAEA /* Assets.xcassets */,
