@@ -90,7 +90,7 @@ class ConvertView: NSView {
                     size += convertAll(contents)
                 }
                 catch {
-                    Swift.print("fail to get contents of directory: \(path)", appendNewline: true)
+                    Swift.print("fail to get contents of directory: \(path)", terminator: "\n")
                 }
             }
             else {
@@ -120,11 +120,11 @@ class ConvertView: NSView {
                 result = true
             }
             catch {
-                Swift.print("write file error", appendNewline: true)
+                Swift.print("write file error", terminator: "\n")
             }
         }
         catch {
-            Swift.print("read file error", appendNewline: true)
+            Swift.print("read file error", terminator: "\n")
         }
         
         return result

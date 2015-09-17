@@ -36,13 +36,13 @@ class ViewController: NSViewController {
             convertView.sourceEncoding = .UTF8
             leftLabel.title = "原编码：UTF-8"
             rightLabel.title = "目标编码：GBK"
-            print("utf => gbk", appendNewline: true)
+            print("utf => gbk", terminator: "\n")
         }
         else {
             convertView.sourceEncoding = .GBK
             leftLabel.title = "原编码：GBK"
             rightLabel.title = "目标编码：UTF-8"
-            print("gbk => utf", appendNewline: true)
+            print("gbk => utf", terminator: "\n")
         }
     }
     
